@@ -1,7 +1,7 @@
 require 'gosu'
 
 class Ruby 
-  def initialize(window, x, y, width, height)
+  def initialize(window, x, y, width, height, image)
     @window = window
     @width = width 
     @height = height 
@@ -9,7 +9,7 @@ class Ruby
     @y = y
 
     @radius = @width / 2
-    @ruby = Gosu::Image.new('test/ruby.png', :tileable => false)
+    @ruby = Gosu::Image.new(@window, image, :options => true)
     @vy = 5
     @vx = 5
 
